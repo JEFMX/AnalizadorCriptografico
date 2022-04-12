@@ -10,3 +10,7 @@ Posteriormente movernos a la carpeta del repositorio
 ```
 $ cd AnalizadorCriptografico
 ```
+Despues correr el archivo shell instaladorModulos.sh
+```
+$ sh instaladorModulos.sh
+```
