@@ -14,13 +14,15 @@ nonce = get_random_bytes(12) #Se genera el nonce esto deacuerdo al RFC7539
 Cifrado = ChaCha20.new(key=key, nonce=nonce)
 #Inicia el cifrado
 TextoCifrado = Cifrado.encrypt(TextoEnClaro)
-ct = b64encode(TextoCifrado).decode('utf-8') #Es importante ya que permite hace el descifrado lo pasa a base64
+ct = b64encode(TextoCifrado).decode('utf-8') #Es importante ya que permite hacer el descifrado lo pasa a base64
 resultCifrado = {'nonce':nonce, 'TextoCifrado':ct}
 print(resultCifrado)
 
 #Descifrar
 TextoADescifrar = b64decode(resultCifrado['TextoCifrado'])
+#Se le indica al algoritmo las entradas
 Descifrado = ChaCha20.new(key=key, nonce=nonce)
+#Inicia el Descifrado
 TextoDescifrado = Descifrado.decrypt(TextoADescifrar)
 resultDescifrado = {'nonce':nonce, 'TextoDescifrado':TextoDescifrado}
 print(resultDescifrado)
