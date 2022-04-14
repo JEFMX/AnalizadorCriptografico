@@ -3,17 +3,7 @@ from base64 import b64decode
 import time
 from Crypto.Cipher import ChaCha20
 from Crypto.Random import get_random_bytes
-
-def mide_tiempo(funcion):
-    def funcion_medida(*args, **kwargs):
-        inicio = time.time()
-        c = funcion(*args, **kwargs)
-        tiempo =(time.time() - inicio)-0.0001
-        #print(tiempo) #Para ver el tiempo en consola es temporal
-        archivo = open("TiempoChaCha.txt", 'a')
-        archivo.write(str(tiempo)+ '\n')
-        return c
-    return funcion_medida
+from MedidorTiempo import mide_tiempo
 
 def generar_key_nonce_entrada(vector_prueba):
     #Implementacion de cifrado y descifrado con CHACHA20 usando PyCryptodome
@@ -41,8 +31,9 @@ def CifradoChacha20(key,nonce,TextoEnClaro):
 def ChaCha20_algoritmo(vector_prueba):
     key,nonce,TextoEnClaro = generar_key_nonce_entrada(vector_prueba)
     temp = CifradoChacha20(key,nonce,TextoEnClaro)
-    decifrar(temp, key, nonce)
+    #decifrar(temp, key, nonce)
     
+'''     
 @mide_tiempo
 def decifrar(resultCifrado,key,nonce):
     #Descifrar
@@ -54,3 +45,4 @@ def decifrar(resultCifrado,key,nonce):
     time.sleep(0.0001) #es necesario apra calcular el tiemp 
     resultDescifrado = {'nonce':nonce, 'TextoDescifrado':TextoDescifrado}
     #print(resultDescifrado)
+'''

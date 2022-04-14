@@ -1,7 +1,7 @@
-from hashlib import sha1, sha224
 from Chacha20 import ChaCha20_algoritmo
 import random
 import string
+
 def generacion_vector_prueba():
     for i in range(100):
         longitud_vector = random.randint(10,300)
