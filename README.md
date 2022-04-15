@@ -14,3 +14,12 @@ Despues correr el archivo shell instaladorModulos.sh
 ```
 $ sh instaladorModulos.sh
 ```
+## Ejecutar
+Primero nos desplazamos al directorio
+```
+$ cd AnalizadorCriptografico
+```
+Finalmente ejecutamos
+```
+$ python main.py
+```
