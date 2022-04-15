@@ -10,9 +10,8 @@ def main():
     # Se realizan los algoritmos por cada vector
     p = 0
     for i in linea:
-        ChaCha20_algoritmo(key, nonce, i.strip('\n'))
+        ChaCha20_algoritmo(key, i.strip('\n'))
         AES_ECB_algoritmo(key, i.strip('\n'))
-        '''
         # Se muestra el porcentaje
         p = p + 1
         if(p == 100):
@@ -20,7 +19,7 @@ def main():
         elif(p % 10 == 0):
             print("Porcentaje: {}%".format(p))
             os.system("clear")
-        '''
+        
 
 
 main()
