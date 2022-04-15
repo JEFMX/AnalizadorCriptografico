@@ -22,5 +22,5 @@ def descifrado(key, cipherText):
 def AES_ECB_algoritmo(key, text):
     text = bytes(text, "utf-8")
     cipherText = cifrado(key, text)
-    #plainText = descifrado(key, nonce, cipherText)
+    plainText = descifrado(key, cipherText)
     #print(str(text) + "\n" + str(cipherText) + "\n" + str(plainText))
