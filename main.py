@@ -1,21 +1,24 @@
 from Chacha20 import ChaCha20_algoritmo
-import random
-import string
+from KeyNonceVector import generar_key_nonce_entrada
+import os
 
-def generacion_vector_prueba():
-    for i in range(100):
-        longitud_vector = random.randint(10,300)
-        vector_prueba = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(longitud_vector))
-        archivo = open("vectores.txt", 'a')
-        archivo.write(vector_prueba + '\n')
 
 def main():
-    generacion_vector_prueba()
-    archivo = open("vectores.txt", 'r')
-    linea = archivo.readlines()
+    # Se generan los vectores de prueba, la llave y el nonce
+    key, nonce, linea = generar_key_nonce_entrada()
+    # Se realizan los algoritmos por cada vector
     p = 0
-    for i in linea: 
-        p += 1
-        print("Porcentaje: {}%".format(p))
-        ChaCha20_algoritmo(i.strip('\n'))
+    for i in linea:
+        ChaCha20_algoritmo(key, nonce, i.strip('\n'))
+        '''
+        # Se muestra el porcentaje
+        p = p + 1
+        if(p == 100):
+            print(".: Analisis finalizado :.")
+        elif(p % 10 == 0):
+            print("Porcentaje: {}%".format(p))
+            os.system("clear")
+        '''
+
+
 main()
