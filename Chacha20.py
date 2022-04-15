@@ -5,7 +5,7 @@ from MedidorTiempo import mide_tiempo_ChaCha20
 
 
 @mide_tiempo_ChaCha20
-def cifrado(key, nonce, TextoEnClaro):
+def cifrado(key, TextoEnClaro):
     Cifrado = ChaCha20.new(key=key)
     TextoCifrado = Cifrado.encrypt(TextoEnClaro)
     time.sleep(0.0001)  # es necesario apra calcular el tiempo
@@ -13,7 +13,7 @@ def cifrado(key, nonce, TextoEnClaro):
 
 
 @mide_tiempo_ChaCha20
-def descifrar(resultCifrado, key, nonce):
+def descifrar(resultCifrado, key):
     # Descifrar
     # Se le indica al algoritmo las entradas
     Descifrado = ChaCha20.new(key=key)
@@ -22,7 +22,7 @@ def descifrar(resultCifrado, key, nonce):
     time.sleep(0.0001)  # es necesario apra calcular el tiempo
 
 
-def ChaCha20_algoritmo(key, nonce, TextoEnClaro):
+def ChaCha20_algoritmo(key, TextoEnClaro):
     TextoEnClaro = bytes(TextoEnClaro, "utf-8")
-    temp = cifrado(key, nonce, TextoEnClaro)
-    #descifrar(temp, key, nonce)
+    temp = cifrado(key, TextoEnClaro)
+    descifrar(temp, key)
