@@ -1,4 +1,5 @@
 from Chacha20 import ChaCha20_algoritmo
+from AES_ECB import AES_ECB_algoritmo
 from KeyNonceVector import generar_key_nonce_entrada
 import os
 
@@ -10,6 +11,7 @@ def main():
     p = 0
     for i in linea:
         ChaCha20_algoritmo(key, nonce, i.strip('\n'))
+        AES_ECB_algoritmo(key, i.strip('\n'))
         '''
         # Se muestra el porcentaje
         p = p + 1
