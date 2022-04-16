@@ -2,6 +2,8 @@ import os
 
 
 def borrar_datos():
+
+#PARA ALGORITMOS DE CIFRADO Y DESCIFRADO
     # Se verifica si ya hay llave
     if(os.path.exists("key.txt") == True):
         os.remove("key.txt")
@@ -17,8 +19,22 @@ def borrar_datos():
     # Se verifica si ya hay resultados AES_ECB
     if(os.path.exists("TiempoAES_ECB.txt") == True):
         os.remove("TiempoAES_ECB.txt")
-    '''
     # Se verifica si ya hay resultados AES_GCM
     if(os.path.exists("TiempoAES_GCM.txt") == True):
         os.remove("TiempoAES_GCM.txt")
-    '''
+
+#PARA ALGORITMOS DE HASHEO
+    # Se verifica si ya hay resultados SHA2-384
+    if(os.path.exists("TiempoSHA2_384.txt") == True):
+        os.remove("TiempoSHA2_384.txt")
+    # Se verifica si ya hay resultados SHA2-512
+    if(os.path.exists("TiempoSHA2_512.txt") == True):
+        os.remove("TiempoSHA2_512.txt")
+    # Se verifica si ya hay resultados SHA3-384
+    if(os.path.exists("TiempoSHA3_384.txt") == True):
+        os.remove("TiempoSHA3_384.txt")
+    # Se verifica si ya hay resultados SHA3-512
+    if(os.path.exists("TiempoSHA3_512.txt") == True):
+        os.remove("TiempoSHA3_512.txt")
+    
+    
