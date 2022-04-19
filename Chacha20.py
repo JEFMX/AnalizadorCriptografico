@@ -1,6 +1,5 @@
 import time
 from Crypto.Cipher import ChaCha20
-from Crypto.Random import get_random_bytes
 from MedidorTiempo import mide_tiempo_ChaCha20
 
 
@@ -18,7 +17,7 @@ def descifrar(resultCifrado, key):
     # Se le indica al algoritmo las entradas
     Descifrado = ChaCha20.new(key=key)
     # Inicia el Descifrado
-    TextoDescifrado = Descifrado.decrypt(resultCifrado)
+    Descifrado.decrypt(resultCifrado)
     time.sleep(0.0001)  # es necesario apra calcular el tiempo
 
 
