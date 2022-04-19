@@ -43,6 +43,5 @@ def main():
                 print("Porcentaje: {}%".format(p))
         
     
-
-
 main()
+os.system("python "+ os.path.abspath(os.getcwd()) + "/Graficos.py")
