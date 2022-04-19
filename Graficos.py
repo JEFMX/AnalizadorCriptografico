@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt 
-import numpy as np
-import sys
+#import numpy as np
+#import sys
 import os
 
 def get_data_cipher():
@@ -28,7 +28,7 @@ def get_graphic_cipher():
     x_aux = []
     for i in range(0,len(x)):
         x_aux.append(i + 1)
-    plt.bar(x_aux, y, bottom = 0, log = True, align = "center")
+    plt.bar(x_aux, y, bottom = 0, log = True, align = "center", color = ['blue','red','green'] )
     plt.xticks(x_aux,x)
     plt.ylabel("Promedio de ejecucion")
     plt.xlabel("Algoritmo")
