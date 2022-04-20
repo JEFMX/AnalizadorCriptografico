@@ -23,25 +23,25 @@ def main():
         hasheo_SHA3_512(i.strip('\n'))
         # Se muestra el porcentaje
         p = p + 1
-        if(p == 100):
+        if(p == len(linea)):
             if(platform.system()== "Windows"): 
                 os.system("cls")
                 print(".: Analisis finalizado :.")
-                print("Porcentaje: {}%".format(p))
+                print("Porcentaje: {}%".format(p/10))
             else: 
                 os.system("clear")
                 print(".: Analisis finalizado :.")
-                print("Porcentaje: {}%".format(p))
-        elif(p % 10 == 0):
+                print("Porcentaje: {}%".format(int(p/10)))
+        elif(p % (len(linea)/10) == 0):
             if(platform.system()== "Windows"): 
                 os.system("cls")
                 print(".: Analizando Espere :.")
-                print("Porcentaje: {}%".format(p))
+                print("Porcentaje: {}%".format(int(p/10)))
             else: 
                 os.system("clear")
                 print(".: Analizando Espere :.")
-                print("Porcentaje: {}%".format(p))
+                print("Porcentaje: {}%".format(int(p/10)))
         
     
 main()
-os.system("python "+ os.path.abspath(os.getcwd()) + "/Graficos.py")
+os.system("py "+ os.path.abspath(os.getcwd()) + "/Graficos.py")

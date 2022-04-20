@@ -31,9 +31,9 @@ def generar_key_nonce_entrada():
     archivo = open("vectores.txt", 'a')
     # Se generan los vectores de prueba
     vectores = []
-    for i in range(1, 101):
+    for i in range(1, 1001):
         # Se determina la longitud del vector de prueba
-        longitud_vector = i * 10
+        longitud_vector = i * 5
         # Se genera el vector de prueba
         vector_prueba = ''.join(random.choice(string.ascii_letters + string.digits)
                                 for _ in range(longitud_vector))

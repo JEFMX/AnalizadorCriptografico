@@ -19,6 +19,7 @@ def mide_tiempo_ChaCha20(funcion):
         # print(tiempo) #Para ver el tiempo en consola es temporal
         archivo = open("TiempoChaCha20.txt", 'a')
         archivo.write(str(tiempo) + '\n')
+        archivo.close()
         return c
     return funcion_medida
 
@@ -31,6 +32,7 @@ def mide_tiempo_AES_ECB(funcion):
         # print(tiempo) #Para ver el tiempo en consola es temporal
         archivo = open("TiempoAES_ECB.txt", 'a')
         archivo.write(str(tiempo) + '\n')
+        archivo.close()
         return c
     return funcion_medida
 
@@ -42,6 +44,7 @@ def mide_tiempo_AES_GCM(funcion):
         # print(tiempo) #Para ver el tiempo en consola es temporal
         archivo = open("TiempoAES_GCM.txt", 'a')
         archivo.write(str(tiempo) + '\n')
+        archivo.close()
         return c
     return funcion_medida
 
@@ -53,6 +56,7 @@ def mide_tiempo_SHA2_384(funcion):
         # print(tiempo) #Para ver el tiempo en consola es temporal
         archivo = open("TiempoSHA2_384.txt", 'a')
         archivo.write(str(tiempo) + '\n')
+        archivo.close()
         return c
     return funcion_medida
 
@@ -64,6 +68,7 @@ def mide_tiempo_SHA2_512(funcion):
         # print(tiempo) #Para ver el tiempo en consola es temporal
         archivo = open("TiempoSHA2_512.txt", 'a')
         archivo.write(str(tiempo) + '\n')
+        archivo.close()
         return c
     return funcion_medida
 
@@ -75,6 +80,7 @@ def mide_tiempo_SHA3_384(funcion):
         # print(tiempo) #Para ver el tiempo en consola es temporal
         archivo = open("TiempoSHA3_384.txt", 'a')
         archivo.write(str(tiempo) + '\n')
+        archivo.close()
         return c
     return funcion_medida
 
@@ -86,5 +92,6 @@ def mide_tiempo_SHA3_512(funcion):
         # print(tiempo) #Para ver el tiempo en consola es temporal
         archivo = open("TiempoSHA3_512.txt", 'a')
         archivo.write(str(tiempo) + '\n')
+        archivo.close()
         return c
     return funcion_medida
