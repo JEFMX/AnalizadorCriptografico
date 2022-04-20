@@ -32,16 +32,24 @@ def get_data(flag):
     elif(flag == 2):
         files = ["TiempoSHA2_384.txt", "TiempoSHA2_512.txt", "TiempoSHA3_384.txt", "TiempoSHA3_512.txt"]
         x, y = get_avg(files, 0,1)
-        color = ['blue','red','green']
+        color = ['blue','red','green', 'purple']
+    elif(flag == 3):
+        files = ["TiempoRSA_PSS_S.txt"]
+        x, y = get_avg(files, 0,1)
+        color = ['blue']
+    elif(flag == 4):
+        files = ["TiempoRSA_PSS_V.txt"]
+        x, y = get_avg(files, 0,1)
+        color = ['blue']
     return x, y, color
 
 def get_graphic():
-    flag = [0, 1, 2]
-    values = ["Cifrado", "Descifrado", "Hash", "Firma"]
+    flag = [0, 1, 2, 3, 4]
+    values = ["Cifrado", "Descifrado", "Hash", "Firma", "Verificacion"]
     fig = plt.figure(figsize = (15,7.5))
     fig.subplots_adjust(hspace = 0.9, wspace = 0.75)
     for i in flag:
-        ax = fig.add_subplot(2, 2, i + 1)
+        ax = fig.add_subplot(3, 2, i + 1)
         x, y, color = get_data(i)
         x_aux = []
         for j in range(0,len(x)):

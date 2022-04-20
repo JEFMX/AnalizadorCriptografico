@@ -7,6 +7,9 @@ def borrar_datos():
     # Se verifica si ya hay llave
     if(os.path.exists("key.txt") == True):
         os.remove("key.txt")
+    # Se verifica si ya hay llave
+    if(os.path.exists("keyRSA.txt") == True):
+        os.remove("keyRSA.txt")
     # Se verifica si ya hay nonce
     if(os.path.exists("nonce.txt") == True):
         os.remove("nonce.txt")
@@ -37,4 +40,10 @@ def borrar_datos():
     if(os.path.exists("TiempoSHA3_512.txt") == True):
         os.remove("TiempoSHA3_512.txt")
     
-    
+#PARA ALGORITMOS DE FIRMA
+    # Se verifica si ya hay resultados RSA PSS
+    if(os.path.exists("TiempoRSA_PSS_S.txt") == True):
+        os.remove("TiempoRSA_PSS_S.txt")
+    # Se verifica si ya hay resultados RSA PSS
+    if(os.path.exists("TiempoRSA_PSS_V.txt") == True):
+        os.remove("TiempoRSA_PSS_V.txt")

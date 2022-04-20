@@ -95,3 +95,27 @@ def mide_tiempo_SHA3_512(funcion):
         archivo.close()
         return c
     return funcion_medida
+
+def mide_tiempo_RSA_PSS_S(funcion):
+    def funcion_medida(*args, **kwargs):
+        inicio = time.time()
+        c = funcion(*args, **kwargs)
+        tiempo = (time.time() - inicio)-0.0001
+        # print(tiempo) #Para ver el tiempo en consola es temporal
+        archivo = open("TiempoRSA_PSS_S.txt", 'a')
+        archivo.write(str(tiempo) + '\n')
+        archivo.close()
+        return c
+    return funcion_medida
+
+def mide_tiempo_RSA_PSS_V(funcion):
+    def funcion_medida(*args, **kwargs):
+        inicio = time.time()
+        c = funcion(*args, **kwargs)
+        tiempo = (time.time() - inicio)-0.0001
+        # print(tiempo) #Para ver el tiempo en consola es temporal
+        archivo = open("TiempoRSA_PSS_V.txt", 'a')
+        archivo.write(str(tiempo) + '\n')
+        archivo.close()
+        return c
+    return funcion_medida

@@ -4,6 +4,7 @@ from AES_ECB import AES_ECB_algoritmo
 from AES_GCM import AES_GCM_algoritmo
 from MedidorTiempo import mide_tiempo
 from Hasheos_SHA import hasheo_SHA2_384, hasheo_SHA2_512, hasheo_SHA3_384, hasheo_SHA3_512
+from RSA_PSS import RSA_PSS_algoritmo
 from KeyNonceVector import generar_key_nonce_entrada
 import os, platform
 
@@ -21,13 +22,14 @@ def main():
         hasheo_SHA2_512(i.strip('\n'))
         hasheo_SHA3_384(i.strip('\n'))
         hasheo_SHA3_512(i.strip('\n'))
+        RSA_PSS_algoritmo(i.strip('\n'))
         # Se muestra el porcentaje
         p = p + 1
         if(p == len(linea)):
             if(platform.system()== "Windows"): 
                 os.system("cls")
                 print(".: Analisis finalizado :.")
-                print("Porcentaje: {}%".format(p/10))
+                print("Porcentaje: {}%".format(int(p/10)))
             else: 
                 os.system("clear")
                 print(".: Analisis finalizado :.")
