@@ -96,6 +96,18 @@ def mide_tiempo_SHA3_512(funcion):
         return c
     return funcion_medida
 
+def mide_tiempo_RSA_OAEP(funcion):
+    def funcion_medida(*args, **kwargs):
+        inicio = time.time()
+        c = funcion(*args, **kwargs)
+        tiempo = (time.time() - inicio)-0.0001
+        # print(tiempo) #Para ver el tiempo en consola es temporal
+        archivo = open("TiempoRSA_OAEP.txt", 'a')
+        archivo.write(str(tiempo) + '\n')
+        archivo.close()
+        return c
+    return funcion_medida
+
 def mide_tiempo_RSA_PSS_S(funcion):
     def funcion_medida(*args, **kwargs):
         inicio = time.time()

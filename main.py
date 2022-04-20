@@ -5,6 +5,7 @@ from AES_GCM import AES_GCM_algoritmo
 from MedidorTiempo import mide_tiempo
 from Hasheos_SHA import hasheo_SHA2_384, hasheo_SHA2_512, hasheo_SHA3_384, hasheo_SHA3_512
 from RSA_PSS import RSA_PSS_algoritmo
+from RSA_OAEP import RSA_OAEP_algoritmo
 from KeyNonceVector import generar_key_nonce_entrada
 import os, platform
 
@@ -22,6 +23,7 @@ def main():
         hasheo_SHA2_512(i.strip('\n'))
         hasheo_SHA3_384(i.strip('\n'))
         hasheo_SHA3_512(i.strip('\n'))
+        RSA_OAEP_algoritmo(i.strip('\n'))
         RSA_PSS_algoritmo(i.strip('\n'))
         # Se muestra el porcentaje
         p = p + 1
@@ -29,21 +31,21 @@ def main():
             if(platform.system()== "Windows"): 
                 os.system("cls")
                 print(".: Analisis finalizado :.")
-                print("Porcentaje: {}%".format(int(p/10)))
+                print("Porcentaje: 100")
             else: 
                 os.system("clear")
                 print(".: Analisis finalizado :.")
-                print("Porcentaje: {}%".format(int(p/10)))
-        elif(p % (len(linea)/10) == 0):
+                print("Porcentaje: 100")
+        elif((p % 10) == 0):
             if(platform.system()== "Windows"): 
                 os.system("cls")
                 print(".: Analizando Espere :.")
-                print("Porcentaje: {}%".format(int(p/10)))
+                print("Porcentaje: {}%".format(p))
             else: 
                 os.system("clear")
                 print(".: Analizando Espere :.")
-                print("Porcentaje: {}%".format(int(p/10)))
-        
+                print("Porcentaje: {}%".format(10))
+
     
 main()
 os.system("py "+ os.path.abspath(os.getcwd()) + "/Graficos.py")

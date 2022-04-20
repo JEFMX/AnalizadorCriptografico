@@ -22,13 +22,13 @@ def get_data(flag):
     y = []
     color = []
     if(flag == 0):
-        files = ["TiempoChaCha20.txt", "TiempoAES_ECB.txt", "TiempoAES_GCM.txt"]
+        files = ["TiempoChaCha20.txt", "TiempoAES_ECB.txt", "TiempoAES_GCM.txt", "TiempoRSA_OAEP.txt"]
         x, y = get_avg(files, 0,2)
-        color = ['blue','red','green']
+        color = ['blue','red','green', 'purple']
     elif(flag == 1):
-        files = ["TiempoChaCha20.txt", "TiempoAES_ECB.txt", "TiempoAES_GCM.txt"]
+        files = ["TiempoChaCha20.txt", "TiempoAES_ECB.txt", "TiempoAES_GCM.txt", "TiempoRSA_OAEP.txt"]
         x, y = get_avg(files, 1,2)
-        color = ['blue','red','green']
+        color = ['blue','red','green', 'purple']
     elif(flag == 2):
         files = ["TiempoSHA2_384.txt", "TiempoSHA2_512.txt", "TiempoSHA3_384.txt", "TiempoSHA3_512.txt"]
         x, y = get_avg(files, 0,1)

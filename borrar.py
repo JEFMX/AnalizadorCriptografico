@@ -3,6 +3,9 @@ import os
 
 def borrar_datos():
 
+#PARA LA CACHE GENERADA POR PYCRYPTODOME
+
+
 #PARA ALGORITMOS DE CIFRADO Y DESCIFRADO
     # Se verifica si ya hay llave
     if(os.path.exists("key.txt") == True):
@@ -25,6 +28,9 @@ def borrar_datos():
     # Se verifica si ya hay resultados AES_GCM
     if(os.path.exists("TiempoAES_GCM.txt") == True):
         os.remove("TiempoAES_GCM.txt")
+    # Se verifica si ya hay resultados RSA_OAEP
+    if(os.path.exists("TiempoRSA_OAEP.txt") == True):
+        os.remove("TiempoRSA_OAEP.txt")
 
 #PARA ALGORITMOS DE HASHEO
     # Se verifica si ya hay resultados SHA2-384
