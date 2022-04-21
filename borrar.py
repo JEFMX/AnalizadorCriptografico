@@ -20,17 +20,25 @@ def borrar_datos():
     if(os.path.exists("vectores.txt") == True):
         os.remove("vectores.txt")
     # Se verifica si ya hay resultados ChaCha20
-    if(os.path.exists("TiempoChaCha20.txt") == True):
-        os.remove("TiempoChaCha20.txt")
+    if(os.path.exists("TiempoChaCha20_C.txt") == True):
+        os.remove("TiempoChaCha20_C.txt")
+    if(os.path.exists("TiempoChaCha20_D.txt") == True):
+        os.remove("TiempoChaCha20_D.txt")
     # Se verifica si ya hay resultados AES_ECB
-    if(os.path.exists("TiempoAES_ECB.txt") == True):
-        os.remove("TiempoAES_ECB.txt")
+    if(os.path.exists("TiempoAES_ECB_C.txt") == True):
+        os.remove("TiempoAES_ECB_C.txt")
+    if(os.path.exists("TiempoAES_ECB_D.txt") == True):
+        os.remove("TiempoAES_ECB_D.txt")
     # Se verifica si ya hay resultados AES_GCM
-    if(os.path.exists("TiempoAES_GCM.txt") == True):
-        os.remove("TiempoAES_GCM.txt")
+    if(os.path.exists("TiempoAES_GCM_C.txt") == True):
+        os.remove("TiempoAES_GCM_C.txt")
+    if(os.path.exists("TiempoAES_GCM_D.txt") == True):
+        os.remove("TiempoAES_GCM_D.txt")
     # Se verifica si ya hay resultados RSA_OAEP
-    if(os.path.exists("TiempoRSA_OAEP.txt") == True):
-        os.remove("TiempoRSA_OAEP.txt")
+    if(os.path.exists("TiempoRSA_OAEP_C.txt") == True):
+        os.remove("TiempoRSA_OAEP_C.txt")
+    if(os.path.exists("TiempoRSA_OAEP_D.txt") == True):
+        os.remove("TiempoRSA_OAEP_D.txt")
 
 #PARA ALGORITMOS DE HASHEO
     # Se verifica si ya hay resultados SHA2-384

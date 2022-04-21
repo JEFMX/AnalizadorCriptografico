@@ -11,38 +11,73 @@ def mide_tiempo(funcion):
     return funcion_medida
 
 
-def mide_tiempo_ChaCha20(funcion):
+def mide_tiempo_ChaCha20_C(funcion):
     def funcion_medida(*args, **kwargs):
         inicio = time.time()
         c = funcion(*args, **kwargs)
         tiempo = (time.time() - inicio)-0.0001
         # print(tiempo) #Para ver el tiempo en consola es temporal
-        archivo = open("TiempoChaCha20.txt", 'a')
+        archivo = open("TiempoChaCha20_C.txt", 'a')
         archivo.write(str(tiempo) + '\n')
         archivo.close()
         return c
     return funcion_medida
 
-
-def mide_tiempo_AES_ECB(funcion):
+def mide_tiempo_ChaCha20_D(funcion):
     def funcion_medida(*args, **kwargs):
         inicio = time.time()
         c = funcion(*args, **kwargs)
         tiempo = (time.time() - inicio)-0.0001
         # print(tiempo) #Para ver el tiempo en consola es temporal
-        archivo = open("TiempoAES_ECB.txt", 'a')
+        archivo = open("TiempoChaCha20_D.txt", 'a')
         archivo.write(str(tiempo) + '\n')
         archivo.close()
         return c
     return funcion_medida
 
-def mide_tiempo_AES_GCM(funcion):
+def mide_tiempo_AES_ECB_C(funcion):
     def funcion_medida(*args, **kwargs):
         inicio = time.time()
         c = funcion(*args, **kwargs)
         tiempo = (time.time() - inicio)-0.0001
         # print(tiempo) #Para ver el tiempo en consola es temporal
-        archivo = open("TiempoAES_GCM.txt", 'a')
+        archivo = open("TiempoAES_ECB_C.txt", 'a')
+        archivo.write(str(tiempo) + '\n')
+        archivo.close()
+        return c
+    return funcion_medida
+
+def mide_tiempo_AES_ECB_D(funcion):
+    def funcion_medida(*args, **kwargs):
+        inicio = time.time()
+        c = funcion(*args, **kwargs)
+        tiempo = (time.time() - inicio)-0.0001
+        # print(tiempo) #Para ver el tiempo en consola es temporal
+        archivo = open("TiempoAES_ECB_D.txt", 'a')
+        archivo.write(str(tiempo) + '\n')
+        archivo.close()
+        return c
+    return funcion_medida
+
+def mide_tiempo_AES_GCM_C(funcion):
+    def funcion_medida(*args, **kwargs):
+        inicio = time.time()
+        c = funcion(*args, **kwargs)
+        tiempo = (time.time() - inicio)-0.0001
+        # print(tiempo) #Para ver el tiempo en consola es temporal
+        archivo = open("TiempoAES_GCM_C.txt", 'a')
+        archivo.write(str(tiempo) + '\n')
+        archivo.close()
+        return c
+    return funcion_medida
+
+def mide_tiempo_AES_GCM_D(funcion):
+    def funcion_medida(*args, **kwargs):
+        inicio = time.time()
+        c = funcion(*args, **kwargs)
+        tiempo = (time.time() - inicio)-0.0001
+        # print(tiempo) #Para ver el tiempo en consola es temporal
+        archivo = open("TiempoAES_GCM_D.txt", 'a')
         archivo.write(str(tiempo) + '\n')
         archivo.close()
         return c
@@ -96,13 +131,25 @@ def mide_tiempo_SHA3_512(funcion):
         return c
     return funcion_medida
 
-def mide_tiempo_RSA_OAEP(funcion):
+def mide_tiempo_RSA_OAEP_C(funcion):
     def funcion_medida(*args, **kwargs):
         inicio = time.time()
         c = funcion(*args, **kwargs)
         tiempo = (time.time() - inicio)-0.0001
         # print(tiempo) #Para ver el tiempo en consola es temporal
-        archivo = open("TiempoRSA_OAEP.txt", 'a')
+        archivo = open("TiempoRSA_OAEP_C.txt", 'a')
+        archivo.write(str(tiempo) + '\n')
+        archivo.close()
+        return c
+    return funcion_medida
+
+def mide_tiempo_RSA_OAEP_D(funcion):
+    def funcion_medida(*args, **kwargs):
+        inicio = time.time()
+        c = funcion(*args, **kwargs)
+        tiempo = (time.time() - inicio)-0.0001
+        # print(tiempo) #Para ver el tiempo en consola es temporal
+        archivo = open("TiempoRSA_OAEP_D.txt", 'a')
         archivo.write(str(tiempo) + '\n')
         archivo.close()
         return c

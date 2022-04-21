@@ -1,17 +1,17 @@
 import time
 from Crypto.Cipher import AES
-from MedidorTiempo import mide_tiempo_AES_ECB
+from MedidorTiempo import mide_tiempo_AES_ECB_C
+from MedidorTiempo import mide_tiempo_AES_ECB_D
 from Crypto.Util.Padding import pad, unpad
 
-@mide_tiempo_AES_ECB
+@mide_tiempo_AES_ECB_C
 def cifrado(key, text):
     cipher = AES.new(key, AES.MODE_ECB)
     cipherText = cipher.encrypt(pad(text, 32))
     time.sleep(0.0001)  # es necesario apra calcular el tiempo
     return cipherText
 
-
-@mide_tiempo_AES_ECB
+@mide_tiempo_AES_ECB_D
 def descifrado(key, cipherText):
     decipher = AES.new(key, AES.MODE_ECB)
     plainText = unpad(decipher.decrypt(cipherText), 32)

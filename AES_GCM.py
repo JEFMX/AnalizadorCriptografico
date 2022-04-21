@@ -1,9 +1,10 @@
 import time
 from Crypto.Cipher import AES
-from MedidorTiempo import mide_tiempo_AES_GCM
+from MedidorTiempo import mide_tiempo_AES_GCM_C
+from MedidorTiempo import mide_tiempo_AES_GCM_D
 from Crypto.Util.Padding import pad, unpad
 
-@mide_tiempo_AES_GCM
+@mide_tiempo_AES_GCM_C
 def cifrado(key, text):
     cipher = AES.new(key, AES.MODE_GCM)
     #cipherText, tag = cipher.encrypt_and_digest(pad(text, 32))
@@ -12,7 +13,7 @@ def cifrado(key, text):
     return cipherText
 
 #Esta fallando el descifrado 
-@mide_tiempo_AES_GCM
+@mide_tiempo_AES_GCM_D
 def descifrado(key, cipherText):
     decipher = AES.new(key, AES.MODE_GCM)
     plainText = decipher.decrypt(cipherText)

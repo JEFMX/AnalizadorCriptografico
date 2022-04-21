@@ -11,7 +11,7 @@ def get_avg(files, init, jump):
         data = 0
         for i in range(init, len(lines), jump):
             data = data + float(lines[i].strip("\n"))
-        data = data / 100
+        data = data / len(lines)
         y.append(data)
         aux = file_txt.strip("Tiempo")
         x.append(aux.strip(".txt"))
@@ -22,11 +22,11 @@ def get_data(flag):
     y = []
     color = []
     if(flag == 0):
-        files = ["TiempoChaCha20.txt", "TiempoAES_ECB.txt", "TiempoAES_GCM.txt", "TiempoRSA_OAEP.txt"]
+        files = ["TiempoChaCha20_C.txt", "TiempoAES_ECB_C.txt", "TiempoAES_GCM_C.txt", "TiempoRSA_OAEP_C.txt"]
         x, y = get_avg(files, 0,2)
         color = ['blue','red','green', 'purple']
     elif(flag == 1):
-        files = ["TiempoChaCha20.txt", "TiempoAES_ECB.txt", "TiempoAES_GCM.txt", "TiempoRSA_OAEP.txt"]
+        files = ["TiempoChaCha20_D.txt", "TiempoAES_ECB_D.txt", "TiempoAES_GCM_D.txt", "TiempoRSA_OAEP_D.txt"]
         x, y = get_avg(files, 1,2)
         color = ['blue','red','green', 'purple']
     elif(flag == 2):
