@@ -1,10 +1,11 @@
 import os
-
+import shutil
 
 def borrar_datos():
 
 #PARA LA CACHE GENERADA POR PYCRYPTODOME
-
+    if(os.path.exists("__pycache__") == True):
+        shutil.rmtree("__pycache__")
 
 #PARA ALGORITMOS DE CIFRADO Y DESCIFRADO
     # Se verifica si ya hay llave
