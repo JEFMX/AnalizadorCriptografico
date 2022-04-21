@@ -14,7 +14,8 @@ def get_avg(files, init, jump):
         data = data / len(lines)
         y.append(data)
         aux = file_txt.strip("Tiempo")
-        x.append(aux.strip(".txt"))
+        aux = aux.strip(".txt")
+        x.append(aux + "\n" + f"{data:.5f}" + "[s]")
     return x, y
 
 def get_data(flag):
