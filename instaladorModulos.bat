@@ -3,7 +3,7 @@ REM Este archivo se encarga de instalar lo modulos de python para el Analizador 
 REM Instalacion del modulo python que contien el set de algoritmos
 pip install pycryptodome
 timeout 3
-REM Instalacion del modulo python que contien el set de algoritmos
+REM Instalacion del modulo python matplotlib para graficar
 pip install matplotlib
 timeout 3
 echo Complete
