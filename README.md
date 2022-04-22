@@ -28,13 +28,12 @@ Despues correr el archivo batch instaladorModulos.bat
 > instaladorModulos.bat
 ```
 ## Ejecutar en Unix o Windows
-###Unix
 Primero nos desplazamos al directorio
 ```
-$ cd AnalizadorCriptografico
+$|> cd AnalizadorCriptografico
 ```
 Finalmente ejecutamos
 ```
-$ python main.py
+$|> python main.py
 ```
 
