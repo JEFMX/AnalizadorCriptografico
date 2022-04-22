@@ -1,7 +1,7 @@
 # Analizador Criptográfico
 El presente repositorio contiene el código fuente de un analizador criptográfico el cual mide los tiempos de ejecución de diversos algoritmos, en operaciones de cifrado, descifrado, hash entre otras.
 
-## Instalar en Unix
+## Instalar en Unix o Linux
 Lo primero es clonar el repositorio
 ```
 $ git clone https://github.com/JEFMX/AnalizadorCriptografico
@@ -27,8 +27,8 @@ Despues correr el archivo batch instaladorModulos.bat
 ```
 > instaladorModulos.bat
 ```
-## Ejecutar en Unix o Winwdows
-  ###Unix
+## Ejecutar en Unix o Windows
+###Unix
 Primero nos desplazamos al directorio
 ```
 $ cd AnalizadorCriptografico
