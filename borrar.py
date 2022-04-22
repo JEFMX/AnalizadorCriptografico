@@ -62,3 +62,8 @@ def borrar_datos():
     # Se verifica si ya hay resultados RSA PSS
     if(os.path.exists("TiempoRSA_PSS_V.txt") == True):
         os.remove("TiempoRSA_PSS_V.txt")
+
+#PARA LOS GRAFICOS 
+    # Se verifica si ya hay valores descartados de los graficos
+    if(os.path.exists("FueraDeRango.txt") == True):
+        os.remove("FueraDeRango.txt")

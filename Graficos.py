@@ -2,16 +2,33 @@
 import matplotlib.pyplot as plt 
 import os
 
-def get_avg(files, init, jump):
+def get_avg(files):
     x = []
     y = []
     for file_txt in files:
         data_file = open(file_txt,"r")
         lines = data_file.readlines()
+        avg = 0
+        for i in range(0, len(lines)):
+            avg = avg + float(lines[i].strip("\n"))
+        avg = avg / len(lines)
+        var = 0
+        for i in range(0, len(lines)):
+            var = var + (float(lines[i].strip("\n")) - avg)**2
+        var = (var/(len(lines)-1))**(1/2)
         data = 0
-        for i in range(init, len(lines), jump):
-            data = data + float(lines[i].strip("\n"))
-        data = data / len(lines)
+        aux = 1
+        incorrect_values = open("FueraDeRango.txt", 'a')
+        incorrect_values.write("-----------------------------------------\n{}\nCondicion: {} < X < {}\nValores fuera de rango:\n".format(file_txt, avg - var, avg + var))
+        for i in range(0, len(lines)):
+            value = float(lines[i].strip("\n"))
+            if((avg - var) < value < (avg + var)):
+                aux = aux + 1
+                data = data + value
+            else:
+                incorrect_values.write("{}\n".format(value))
+        incorrect_values.close()
+        data = data / aux
         y.append(data)
         aux = file_txt.strip("Tiempo")
         aux = aux.strip(".txt")
@@ -24,23 +41,23 @@ def get_data(flag):
     color = []
     if(flag == 0):
         files = ["TiempoChaCha20_C.txt", "TiempoAES_ECB_C.txt", "TiempoAES_GCM_C.txt", "TiempoRSA_OAEP_C.txt"]
-        x, y = get_avg(files, 0,2)
+        x, y = get_avg(files)
         color = ['blue','red','green', 'purple']
     elif(flag == 1):
         files = ["TiempoChaCha20_D.txt", "TiempoAES_ECB_D.txt", "TiempoAES_GCM_D.txt", "TiempoRSA_OAEP_D.txt"]
-        x, y = get_avg(files, 1,2)
+        x, y = get_avg(files)
         color = ['blue','red','green', 'purple']
     elif(flag == 2):
         files = ["TiempoSHA2_384.txt", "TiempoSHA2_512.txt", "TiempoSHA3_384.txt", "TiempoSHA3_512.txt"]
-        x, y = get_avg(files, 0,1)
+        x, y = get_avg(files)
         color = ['blue','red','green', 'purple']
     elif(flag == 3):
         files = ["TiempoRSA_PSS_S.txt"]
-        x, y = get_avg(files, 0,1)
+        x, y = get_avg(files)
         color = ['blue']
     elif(flag == 4):
         files = ["TiempoRSA_PSS_V.txt"]
-        x, y = get_avg(files, 0,1)
+        x, y = get_avg(files)
         color = ['blue']
     return x, y, color
 
