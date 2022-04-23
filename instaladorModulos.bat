@@ -12,5 +12,8 @@ timeout 1
 REM Instalacion del modulo python ecdsa BF Koblitz Curve para curvas elipticas 
 pip install cryptography
 timeout 1
+REM Instalacion del modulo python ecdsa BF Koblitz Curve para curvas elipticas 
+pip install psutil
+timeout 1
 echo Complete
 timeout 5

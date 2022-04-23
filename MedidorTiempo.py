@@ -6,7 +6,7 @@ def mide_tiempo(funcion):
         c = funcion(*args, **kwargs)
         tiempo = (time.time() - inicio)
         #Para ver el tiempo en consola de todo el tiempo de ejecucion del programa
-        print("Tiempo total de ejecución de todos los algoritmos: " + str(tiempo)) 
+        print("Tiempo total de ejecución de todos los algoritmos: " + str(tiempo) + " [s]") 
         return c
     return funcion_medida
 

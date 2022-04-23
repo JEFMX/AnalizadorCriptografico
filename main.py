@@ -9,7 +9,7 @@ from RSA_OAEP import RSA_OAEP_algoritmo
 from ECDSA_PF import ECDSA_PRIME_FIELD_algoritmo
 from ECDSA_BF import ECDSA_BINARY_FIELD_algoritmo
 from KeyNonceVector import generar_key_nonce_entrada
-import os, platform
+import os, platform, psutil
 
 @mide_tiempo
 def main():
@@ -30,7 +30,7 @@ def main():
         ECDSA_PRIME_FIELD_algoritmo(i.strip('\n'))
         ECDSA_BINARY_FIELD_algoritmo(i.strip('\n'))
     
-    #os.uname
+        
         # Se muestra el porcentaje
         p = p + 1
         if(p == len(linea)):
@@ -38,20 +38,67 @@ def main():
                 os.system("cls")
                 print(".: Analisis finalizado :.")
                 print("Porcentaje: 100")
+                uname = platform.uname()
+                print(f"Sistema: {uname.system}")
+                print(f"Nombre del dispositivo: {uname.node}")
+                print(f"Version: {uname.version}")
+                print(f"Arquitectura: {uname.machine}")
+                print(f"Procesador: {uname.processor}")
+                print("Nucleos fisicos:", psutil.cpu_count(logical= False))
+                print("Total de nuclos:", psutil.cpu_count(logical= True))
+                cpufreq = psutil.cpu_freq()
+                print(f"Frecuencia Maxima: {cpufreq.max:.2f} [Mhz]")
+                print(f"Frecuencia Minima: {cpufreq.min:.2f} [Mhz]")
+                print(f"Frecuencia Actual: {cpufreq.current:.2f} [Mhz]")
             else: 
                 os.system("clear")
                 print(".: Analisis finalizado :.")
                 print("Porcentaje: 100")
+                uname = platform.uname()
+                print(f"Sistema: {uname.system}")
+                print(f"Nombre del dispositivo: {uname.node}")
+                print(f"Version: {uname.version}")
+                print(f"Arquitectura: {uname.machine}")
+                print(f"Procesador: {uname.processor}")
+                print("Nucleos fisicos:", psutil.cpu_count(logical= False))
+                print("Total de nuclos:", psutil.cpu_count(logical= True))
+                cpufreq = psutil.cpu_freq()
+                print(f"Frecuencia Maxima: {cpufreq.max:.2f} [Mhz]")
+                print(f"Frecuencia Minima: {cpufreq.min:.2f} [Mhz]")
+                print(f"Frecuencia Actual: {cpufreq.current:.2f} [Mhz]")
         elif((p % 10) == 0):
             if(platform.system()== "Windows"): 
                 os.system("cls")
                 print(".: Analizando Espere :.")
                 print("Porcentaje: {}%".format(p))
+                uname = platform.uname()
+                print(f"Sistema: {uname.system}")
+                print(f"Nombre del dispositivo: {uname.node}")
+                print(f"Version: {uname.version}")
+                print(f"Arquitectura: {uname.machine}")
+                print(f"Procesador: {uname.processor}")
+                print("Nucleos fisicos:", psutil.cpu_count(logical= False))
+                print("Total de nuclos:", psutil.cpu_count(logical= True))
+                cpufreq = psutil.cpu_freq()
+                print(f"Frecuencia Maxima: {cpufreq.max:.2f} [Mhz]")
+                print(f"Frecuencia Minima: {cpufreq.min:.2f} [Mhz]")
+                print(f"Frecuencia Actual: {cpufreq.current:.2f} [Mhz]")
             else: 
                 os.system("clear")
                 print(".: Analizando Espere :.")
                 print("Porcentaje: {}%".format(10))
-
+                uname = platform.uname()
+                print(f"Sistema: {uname.system}")
+                print(f"Nombre del dispositivo: {uname.node}")
+                print(f"Version: {uname.version}")
+                print(f"Arquitectura: {uname.machine}")
+                print(f"Procesador: {uname.processor}")
+                print("Nucleos fisicos:", psutil.cpu_count(logical= False))
+                print("Total de nuclos:", psutil.cpu_count(logical= True))
+                cpufreq = psutil.cpu_freq()
+                print(f"Frecuencia Maxima: {cpufreq.max:.2f} [Mhz]")
+                print(f"Frecuencia Minima: {cpufreq.min:.2f} [Mhz]")
+                print(f"Frecuencia Actual: {cpufreq.current:.2f} [Mhz]")
     
 main()
 os.system("py "+ os.path.abspath(os.getcwd()) + "/Graficos.py")
