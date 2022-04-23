@@ -1,6 +1,5 @@
 import random
 import string
-import os
 from Crypto.Random import get_random_bytes
 from borrar import borrar_datos
 from Crypto.PublicKey import RSA
@@ -20,7 +19,7 @@ def generar_key_nonce_entrada():
     archivo.close()
 
     # Se genera la llave de RSA
-    keyRSA = RSA.generate(2048) # Se genera una lalve de 2048 bits
+    keyRSA = RSA.generate(2048) # Se genera una llave de 2048 bits
     # Se crea el archivo para almacenar la llave
     f = open('keyRSA.txt','wb')
     # Se escribe la lalve en el archivo

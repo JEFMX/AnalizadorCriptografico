@@ -6,6 +6,8 @@ from MedidorTiempo import mide_tiempo
 from Hasheos_SHA import hasheo_SHA2_384, hasheo_SHA2_512, hasheo_SHA3_384, hasheo_SHA3_512
 from RSA_PSS import RSA_PSS_algoritmo
 from RSA_OAEP import RSA_OAEP_algoritmo
+from ECDSA_PF import ECDSA_PRIME_FIELD_algoritmo
+from ECDSA_BF import ECDSA_BINARY_FIELD_algoritmo
 from KeyNonceVector import generar_key_nonce_entrada
 import os, platform
 
@@ -25,6 +27,10 @@ def main():
         hasheo_SHA3_512(i.strip('\n'))
         RSA_OAEP_algoritmo(i.strip('\n'))
         RSA_PSS_algoritmo(i.strip('\n'))
+        ECDSA_PRIME_FIELD_algoritmo(i.strip('\n'))
+        ECDSA_BINARY_FIELD_algoritmo(i.strip('\n'))
+    
+    #os.uname
         # Se muestra el porcentaje
         p = p + 1
         if(p == len(linea)):

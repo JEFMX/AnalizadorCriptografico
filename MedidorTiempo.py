@@ -159,7 +159,7 @@ def mide_tiempo_RSA_PSS_S(funcion):
     def funcion_medida(*args, **kwargs):
         inicio = time.time()
         c = funcion(*args, **kwargs)
-        tiempo = (time.time() - inicio)-0.0001
+        tiempo = (time.time() - inicio)
         # print(tiempo) #Para ver el tiempo en consola es temporal
         archivo = open("TiempoRSA_PSS_S.txt", 'a')
         archivo.write(str(tiempo) + '\n')
@@ -171,9 +171,57 @@ def mide_tiempo_RSA_PSS_V(funcion):
     def funcion_medida(*args, **kwargs):
         inicio = time.time()
         c = funcion(*args, **kwargs)
-        tiempo = (time.time() - inicio)-0.0001
+        tiempo = (time.time() - inicio)
         # print(tiempo) #Para ver el tiempo en consola es temporal
         archivo = open("TiempoRSA_PSS_V.txt", 'a')
+        archivo.write(str(tiempo) + '\n')
+        archivo.close()
+        return c
+    return funcion_medida
+
+def mide_tiempo_ECDSA_PRIME_FIELD_S(funcion):
+    def funcion_medida(*args, **kwargs):
+        inicio = time.time()
+        c = funcion(*args, **kwargs)
+        tiempo = (time.time() - inicio)
+        # print(tiempo) #Para ver el tiempo en consola es temporal
+        archivo = open("TiempoECDSA_PRIME_FIELD_S.txt", 'a')
+        archivo.write(str(tiempo) + '\n')
+        archivo.close()
+        return c
+    return funcion_medida
+
+def mide_tiempo_ECDSA_PRIME_FIELD_V(funcion):
+    def funcion_medida(*args, **kwargs):
+        inicio = time.time()
+        c = funcion(*args, **kwargs)
+        tiempo = (time.time() - inicio)
+        # print(tiempo) #Para ver el tiempo en consola es temporal
+        archivo = open("TiempoECDSA_PRIME_FIELD_V.txt", 'a')
+        archivo.write(str(tiempo) + '\n')
+        archivo.close()
+        return c
+    return funcion_medida
+
+def mide_tiempo_ECDSA_BINARY_FIELD_S(funcion):
+    def funcion_medida(*args, **kwargs):
+        inicio = time.time()
+        c = funcion(*args, **kwargs)
+        tiempo = (time.time() - inicio)-0.0001
+        # print(tiempo) #Para ver el tiempo en consola es temporal
+        archivo = open("TiempoECDSA_BINARY_FIELD_S.txt", 'a')
+        archivo.write(str(tiempo) + '\n')
+        archivo.close()
+        return c
+    return funcion_medida
+
+def mide_tiempo_ECDSA_BINARY_FIELD_V(funcion):
+    def funcion_medida(*args, **kwargs):
+        inicio = time.time()
+        c = funcion(*args, **kwargs)
+        tiempo = (time.time() - inicio)-0.0001
+        # print(tiempo) #Para ver el tiempo en consola es temporal
+        archivo = open("TiempoECDSA_BINARY_FIELD_V.txt", 'a')
         archivo.write(str(tiempo) + '\n')
         archivo.close()
         return c

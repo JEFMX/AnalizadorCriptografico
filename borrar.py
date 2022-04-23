@@ -55,13 +55,25 @@ def borrar_datos():
     if(os.path.exists("TiempoSHA3_512.txt") == True):
         os.remove("TiempoSHA3_512.txt")
     
-#PARA ALGORITMOS DE FIRMA
-    # Se verifica si ya hay resultados RSA PSS
+#PARA ALGORITMOS DE FIRMA Y VERIFICACIÓN DE LA MISMA
+    # Se verifica si ya hay resultados RSA PSS firma
     if(os.path.exists("TiempoRSA_PSS_S.txt") == True):
         os.remove("TiempoRSA_PSS_S.txt")
-    # Se verifica si ya hay resultados RSA PSS
+    # Se verifica si ya hay resultados RSA PSS verificacion
     if(os.path.exists("TiempoRSA_PSS_V.txt") == True):
         os.remove("TiempoRSA_PSS_V.txt")
+    # Se verifica si ya hay resultados ECDSA Prime Field firma
+    if(os.path.exists("TiempoECDSA_PRIME_FIELD_S.txt") == True):
+        os.remove("TiempoECDSA_PRIME_FIELD_S.txt")
+    # Se verifica si ya hay resultados ECDSA Prime Field verificación
+    if(os.path.exists("TiempoECDSA_PRIME_FIELD_V.txt") == True):
+        os.remove("TiempoECDSA_PRIME_FIELD_V.txt")
+    # Se verifica si ya hay resultados ECDSA Binary Field firma
+    if(os.path.exists("TiempoECDSA_BINARY_FIELD_S.txt") == True):
+        os.remove("TiempoECDSA_BINARY_FIELD_S.txt")
+    # Se verifica si ya hay resultados ECDSA Binary Field verificación
+    if(os.path.exists("TiempoECDSA_BINARY_FIELD_V.txt") == True):
+        os.remove("TiempoECDSA_BINARY_FIELD_V.txt")
 
 #PARA LOS GRAFICOS 
     # Se verifica si ya hay valores descartados de los graficos

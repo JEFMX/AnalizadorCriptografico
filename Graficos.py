@@ -52,13 +52,13 @@ def get_data(flag):
         x, y = get_avg(files)
         color = ['blue','red','green', 'purple']
     elif(flag == 3):
-        files = ["TiempoRSA_PSS_S.txt"]
+        files = ["TiempoRSA_PSS_S.txt", "TiempoECDSA_PRIME_FIELD_S.txt", "TiempoECDSA_BINARY_FIELD_S.txt"]
         x, y = get_avg(files)
-        color = ['blue']
+        color = ['blue','green', 'red']
     elif(flag == 4):
-        files = ["TiempoRSA_PSS_V.txt"]
+        files = ["TiempoRSA_PSS_V.txt", "TiempoECDSA_PRIME_FIELD_V.txt", "TiempoECDSA_BINARY_FIELD_S.txt"]
         x, y = get_avg(files)
-        color = ['blue']
+        color = ['blue', 'green', 'red']
     return x, y, color
 
 def get_graphic():
@@ -74,11 +74,11 @@ def get_graphic():
             x_aux.append(j)
         ax.bar(x, y, bottom = 0, log = True, align = "center",  color = color)
         ax.set_xticks(x_aux,x)
-        ax.set_ylabel("Promedio de ejecucion")
+        ax.set_ylabel("Promedio de ejecución")
         ax.set_xlabel("Algoritmo")
         ax.set_title(values[i])
-    fig.suptitle("Analisis de datos", fontweight = "bold")
-    fig.canvas.manager.set_window_title('Analisis de datos')
+    fig.suptitle("Análisis de datos", fontweight = "bold")
+    fig.canvas.manager.set_window_title('Análisis de datos')
     plt.show()
     
 get_graphic()
