@@ -32,7 +32,7 @@ def get_avg(files):
         y.append(data)
         aux = file_txt.strip("Tiempo")
         aux = aux.strip(".txt")
-        x.append(aux + "\n" + f"{data:.5f}" + "[s]")
+        x.append(aux + "\n" + f"{data:.6f}" + "[s]")
     return x, y
 
 def get_data(flag):
