@@ -1,5 +1,5 @@
 # Analizador Criptográfico
-El presente repositorio contiene el código fuente de un analizador criptográfico el cual mide los tiempos de ejecución de diversos algoritmos, en operaciones de cifrado, descifrado, hash entre otras.
+El presente repositorio contiene el código fuente de un analizador criptográfico el cual mide los tiempos de ejecución de diversos algoritmos, en operaciones de cifrado, descifrado, hash, firma digital y verificación de está. 
 
 ## Instalar en Unix o Linux
 Lo primero es clonar el repositorio
