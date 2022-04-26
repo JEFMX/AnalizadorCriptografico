@@ -79,8 +79,8 @@ def get_graphic():
         ax.set_title(values[i])
     fig.suptitle("Análisis de datos", fontweight = "bold")
     fig.canvas.manager.set_window_title('Análisis de datos')
-    manager = plt.get_current_fig_manager()
-    manager.resize(*manager.window.maxsize())
+    #manager = plt.get_current_fig_manager()
+    #manager.resize(*manager.window.maxsize())
     plt.show()
     
 get_graphic()
