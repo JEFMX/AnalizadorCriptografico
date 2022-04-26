@@ -101,4 +101,7 @@ def main():
                 print(f"Frecuencia Actual: {cpufreq.current:.2f} [Mhz]")
     
 main()
-os.system("py "+ os.path.abspath(os.getcwd()) + "/Graficos.py")
+if(platform.system()== "Windows"):
+    os.system("py " + os.path.abspath(os.getcwd()) + "/Graficos.py")
+else:
+    os.system("python3" + os.path.abspath(os.getcwd()) + "/Graficos.py")
