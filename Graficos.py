@@ -64,7 +64,7 @@ def get_data(flag):
 def get_graphic():
     flag = [0, 1, 2, 3, 4]
     values = ["Cifrado", "Descifrado", "Hash", "Firma", "Verificacion"]
-    fig = plt.figure()
+    fig = plt.figure(figsize = (15,7.5))
     fig.subplots_adjust(hspace = 0.9, wspace = 0.75)
     for i in flag:
         ax = fig.add_subplot(3, 2, i + 1)
