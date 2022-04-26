@@ -104,4 +104,4 @@ main()
 if(platform.system()== "Windows"):
     os.system("py " + os.path.abspath(os.getcwd()) + "/Graficos.py")
 else:
-    os.system("python3" + os.path.abspath(os.getcwd()) + "/Graficos.py")
+    os.system("python3 " + os.path.abspath(os.getcwd()) + "/Graficos.py")
